@@ -15,7 +15,7 @@ public class HomingMissile : MonoBehaviour
    
 
     void Start(){
-		target =  GameObject.FindWithTag("Player").transform;
+		target =  GameObject.FindWithTag("Player").transform;		
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -33,6 +33,8 @@ public class HomingMissile : MonoBehaviour
 		Instantiate(explosionEffect, transform.position, transform.rotation);	
 		Destroy(gameObject);						
 	}
+
+	
 	
 	
 	
