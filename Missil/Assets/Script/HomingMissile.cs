@@ -11,12 +11,15 @@ public class HomingMissile : MonoBehaviour
     public int speed = 5;
 	public int rotateSpeed = 200;
 	public GameObject explosionEffect;
+
+
 	
    
 
     void Start(){
 		target =  GameObject.FindWithTag("Player").transform;		
         rb = GetComponent<Rigidbody2D>();
+		
     }
 
 
@@ -30,7 +33,7 @@ public class HomingMissile : MonoBehaviour
     }
 	
 	void OnTriggerEnter2D(){
-		Instantiate(explosionEffect, transform.position, transform.rotation);	
+		Instantiate(explosionEffect, transform.position, transform.rotation);			
 		Destroy(gameObject);						
 	}
 
