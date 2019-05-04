@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Shootable
   - asteroid
+  - missile
   layers:
   - Default
   - TransparentFX

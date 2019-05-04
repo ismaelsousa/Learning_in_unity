@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 476666834100828349}
   m_Layer: 0
   m_Name: Missile
-  m_TagString: Untagged
+  m_TagString: missile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,8 +121,6 @@ MonoBehaviour:
   rotateSpeed: 200
   explosionEffect: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664,
     type: 3}
-  explosion: {fileID: 8300000, guid: 96b87f75411cfaf42accebfaa904d015, type: 3}
-  box: {fileID: 476666834100828349}
 --- !u!60 &6261635431190749303
 PolygonCollider2D:
   m_ObjectHideFlags: 0

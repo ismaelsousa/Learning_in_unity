@@ -16,8 +16,8 @@ public class SpawnAsteroid : MonoBehaviour
     IEnumerator factory(){
         while(true){
 			GameObject clone = Instantiate(asteroid, transform.position, transform.rotation);	
-            clone.transform.position = new Vector2(clone.transform.position.x,Random.Range(-5,14));
-			yield return new WaitForSeconds(3);		
+            clone.transform.position = new Vector2(clone.transform.position.x,Random.Range(-3,12));
+			yield return new WaitForSeconds(Random.Range(0.0f, 10.0f));		
 		}
     }
 }

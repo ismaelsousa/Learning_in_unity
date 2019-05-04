@@ -12,9 +12,9 @@ public class Spawns : MonoBehaviour{
     }
 	
 	IEnumerator spawns(){       
-		while(true){
+		while(true){			
+			yield return new WaitForSeconds(Random.Range(4.0f, 20.0f));	
 			Instantiate(missele, transform.position, transform.rotation);	
-			yield return new WaitForSeconds(8);		
 		}
     }
     
