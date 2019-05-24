@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class HomingMissile : MonoBehaviour
 {
- 
+
     public Transform target;//alvo
     private Rigidbody2D rb;
     public int speed = 5;
@@ -39,19 +39,24 @@ public class HomingMissile : MonoBehaviour
         {
             SceneManager.LoadScene("GameOver");
         }
-
-		if(outher.tag == "missile"){
-			Sounds.instancia.playSoundBomb();
-       		 Instantiate(explosionEffect, transform.position, transform.rotation);
-       		 Destroy(gameObject);
-		}
-
-		//instance static from Sounds
-        //audioControllerMissile.PlayOneShot(soundBomb);
-		Sounds.instancia.playSoundBomb();
-        Instantiate(explosionEffect, transform.position, transform.rotation);
-        Destroy(gameObject);
-
+        else if (outher.tag == "missile")
+        {
+            //atualiza um ponto a mais
+            Pontuation.atualizaPontuation();
+            Sounds.instancia.playSoundBomb();
+            Instantiate(explosionEffect, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
+        else
+        {
+            //atualiza um ponto a mais
+            Pontuation.atualizaPontuation();
+            //instance static from Sounds
+            //audioControllerMissile.PlayOneShot(soundBomb);
+            Sounds.instancia.playSoundBomb();
+            Instantiate(explosionEffect, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
     }
 
 

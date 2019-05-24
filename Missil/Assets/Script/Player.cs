@@ -8,12 +8,15 @@ public class Player : MonoBehaviour
 
 	public Rigidbody2D rb;
 
+	public Transform tf;
+
 	public Vector2 movement;
 	public Joystick joystick;
 	
     // Start is called before the first frame update
     void Start()
     {
+		tf = this.GetComponent<Transform>();
         rb = this.GetComponent<Rigidbody2D>();
     }
 
@@ -21,6 +24,15 @@ public class Player : MonoBehaviour
     void Update()
     {
 			movement = new Vector2(joystick.Horizontal,joystick.Vertical);
+			if(tf.position.x < -11){
+				tf.position = new Vector3(11,tf.position.y,tf.position.z);
+			}else if (tf.position.x > 11){
+				tf.position = new Vector3(-11,tf.position.y,tf.position.z);
+			}else if (tf.position.y < -6){
+				tf.position = new Vector3(tf.position.x,6,tf.position.z);
+			}else if (tf.position.y > 6){
+				tf.position = new Vector3(tf.position.x,-6,tf.position.z);
+			}
 	
     }
 
