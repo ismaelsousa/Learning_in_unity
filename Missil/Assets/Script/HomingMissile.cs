@@ -37,7 +37,12 @@ public class HomingMissile : MonoBehaviour
     {
         if (outher.tag == "Player")
         {
-            SceneManager.LoadScene("GameOver");
+        	Sounds.instancia.playSoundBomb();
+            SceneManager.LoadSceneAsync("GameOver");
+			
+			Destroy(outher.gameObject);
+			Instantiate(explosionEffect, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
         else if (outher.tag == "missile")
         {

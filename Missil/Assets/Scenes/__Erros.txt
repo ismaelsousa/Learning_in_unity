@@ -1,0 +1,1 @@
+quando perde e reinicia quando faz um ponto ele traz o score antigo
